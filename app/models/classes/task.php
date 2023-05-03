@@ -1,4 +1,5 @@
 <?php
+include_once 'status.php';
 
     class Task {
         private int $task_id;
@@ -7,6 +8,13 @@
         private $starting_date;
         private $finished_date;
         private Status $status;
+
+        function __construct(string $task_name, string $username, $starting_date, Status $status = Status::executing) {
+            $this->task_name = $task_name;
+            $this->username = $username;
+            $this->starting_date = $starting_date;
+            $this->status = $status;
+        }
 
         //getters
         function getId() {
