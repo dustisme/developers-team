@@ -1,32 +1,33 @@
 [
 	{
-		"username": "Brenden Chang",
 		"id": 100,
+		"username": "Brenden Chang",
 		"task": "ac nulla. In",
 		"status": "executing"
 	},
 	{
-		"username": "Macon May",
 		"id": 101,
+		"username": "Macon May",
 		"task": "gravida sit amet, dapibus",
 		"status": "finished"
 	},
 	{
-		"username": "Kennedy Mercer",
 		"id": 102,
+		"username": "Kennedy Mercer",
 		"task": "sem. Pellentesque ut ipsum ac mi eleifend egestas. Sed pharetra, felis eget varius ultrices,",
 		"status": "finished"
 	},
 	{
-		"username": "Blake Sweeney",
 		"id": 103,
+		"username": "Blake Sweeney",
 		"task": "dapibus ligula.",
 		"status": "executing"
 	},
 	{
-		"username": "Ashely Snider",
 		"id": 104,
+		"username": "Ashely Snider",
 		"task": "blandit enim consequat purus. Maecenas libero est, congue a, aliquet vel,",
 		"status": "executing"
 	}
-]
+	]
+	
