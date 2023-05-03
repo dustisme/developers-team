@@ -2,19 +2,28 @@
 
 class jsonPersistence implements jsonPersistenceActions {  
     
-    function listTasksAction() {
+    private Array $task_array = array();
+
+
+    function __construct(){
 
     }
-    function viewTaskAction() {
+    public function listTasks() {
+        return $this->task_array;
+    }
+    public function viewTask() {
 
     }
-    function editOneTaskAction() {
+    public function editOneTask() {
 
     }
-    function addTaskAction() {
+    public function addTask() {
 
     }
-    function deleteTask() {
+    public function deleteTask() {
 
+    }
+    public function searchTask() {
+        
     }
 }

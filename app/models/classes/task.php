@@ -1,16 +1,16 @@
 <?php
 
     class Task {
-        private int $id;
+        private int $task_id;
         private string $task_name;
         private string $username;
         private $starting_date;
         private $finished_date;
-        private string $status;
+        private Status $status;
 
         //getters
         function getId() {
-            return $this->id;
+            return $this->task_id;
         }
         function getTask_name() {
             return $this->task_name;
@@ -41,7 +41,7 @@
         function setFinished_date(string $finished_date) {
             $this->finished_date = $finished_date;
         }
-        function setStatus(string $status) {
+        function setStatus(Status $status) {
             $this->status = $status;
         }
     }
