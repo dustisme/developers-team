@@ -1,6 +1,6 @@
 <?php
 
-interface jsonPersistenceActions {
+interface PersistenceInterface {
     
     public function listTasks();
     public function viewTask($task_id);

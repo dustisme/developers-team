@@ -1,7 +1,7 @@
 <?php
 include '../app/models/classes/task.php';
 
-class jsonPersistence implements jsonPersistenceActions {  
+class Persistence implements PersistenceInterface {  
     
     private Array $task_array = array();
 
@@ -19,15 +19,12 @@ class jsonPersistence implements jsonPersistenceActions {
     function editOneTask($task_id) {
 
     }
-    function addTask() {}
+    function addTask() {
+
+    }
     function deleteTask($task_id) {
-        foreach($this->task_array as $selected_task) {
-            if($selected_task->getId() == $task_id) {
-                unset($selected_task);
-            } else {
-                echo "Task not found";
-            }
-        }
+        $deletedTask = $this->task_array[$this->searchTask($task_id)];
+        unset($deletedTask);
     }
     function searchTask($task_id) {
         foreach($this->task_array as $selected_task) {
