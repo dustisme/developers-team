@@ -1,6 +1,14 @@
+<?php
+class Error {
+    function printMessage() {
+        echo "Not found";
+    }
+}
+?>
+
 <?php include '../app/views/layouts/header.phtml'?>
 <h2>Error</h2>
-<p><?php echo $this->error; ?></p>
+<p><?php echo $this->error->printMessage(); ?></p>
 <br>
 <p><a href="../test/index.phtml">Back to list</a></p>
 <?php include '../app/views/layouts/footer.phtml'?>
