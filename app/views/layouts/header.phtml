@@ -5,18 +5,45 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TO DO app</title>
+    <!-- Tailwind CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Icons -->
+    <script src="https://kit.fontawesome.com/0ccfeb7cbe.js" crossorigin="anonymous"></script>
+    <!--Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Darumadrop+One&display=swap" rel="stylesheet">
+    <!-- Tailwind config-->
     <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        clifford: '#da373d',
-                    }
-                }
-            }
-        }
-  </script>
+        //module.exports = {
+            //theme: {
+                //extend: {
+                    //fontFamily: {
+                        //'darumadrop': ['"Darumadrop One"', 'cursive'],
+                    //},
+                    //colors: {
+                          //'bubblegum-pink': '#F81BDC',
+                    //},
+                //},
+            //},
+        //};
+    </script>
 </head>
-<body>
-    
+<header class="container mx-auto my-auto p-10 bg-[#FEFEFF] rounded flex justify-between grid grid-cols-4 gap-3">
+    <div class="p-3 col-span-3 content-center grid grid-rows-2 gap-4">
+        <h1 class="font-darumadrop font-bold p-1 text-5xl row-span-1">My TO DO App</h1>
+        <div class="w-80 flex justify-start grid grid-cols-2 gap-1 content-center">
+          <p class="w-40 col-span-1 grid self-end">Brought to you by:</p>
+          <h3 class="p-3 w-40 col-span-1 font-bold tracking-wide text-xl text-white text-center bg-[#F81BDC] rounded">IT ACADEMY</h3>
+    	</div>
+    </div>
+    <nav class="py-3 grid grid-rows-1 grid-cols-3 col-span-1">
+            <a class="col-span-1" href="#index"><i class="bg-[#F81BDC] text-white hover:bg-white hover:text-[#F81BDC] py-2 px-2 mr-3 ml-3 rounded fa fa-house"></i></a>
+            <form action="flex flex-row grid grid-cols-3 col-span-2">
+              <input type="text" class="bg-grey-200 text-grey-300 py-2 px-4 rounded basis-2/3 col-span-2" placeholder="Search..." name="search">
+              <button type="submit"><i class="bg-[#F81BDC] text-white hover:bg-white hover:text-[#F81BDC] py-2 px-2 mr-3 ml-3 rounded basis-1/3 col-span-1 fa fa-search"></i></button>
+            </form>
+        </nav>
+    </header>
+<body class="bg-[#FEFEFF] rounded">
+    <div class="lg:content-auto">
