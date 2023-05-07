@@ -12,35 +12,33 @@
     <!--Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Darumadrop+One&display=swap" rel="stylesheet">
-    <!-- Tailwind config-->
+    <link href="https://fonts.googleapis.com/css2?family=Braah+One&family=Darumadrop+One&family=Roboto&display=swap" rel="stylesheet">
     <script>
-        //module.exports = {
-            //theme: {
-                //extend: {
-                    //fontFamily: {
-                        //'darumadrop': ['"Darumadrop One"', 'cursive'],
-                    //},
-                    //colors: {
-                          //'bubblegum-pink': '#F81BDC',
-                    //},
-                //},
-            //},
-        //};
+        module.exports = {
+          theme: {
+            extend: {
+              fontFamily: {
+                'daruma': ["Darumadrop One", 'cursive'],
+                'roboto': ['Roboto', 'cursive'],
+                'braah-one': ['"Braah One"', 'cursive']
+              },
+            },
+          },
+        };
     </script>
 </head>
 <header class="flex justify-between grid grid-cols-4 gap-3 p-10 mx-auto my-auto bg-[#FEFEFF] rounded ">
     <div class="col-span-2 content-center grid grid-rows-2 gap-4 p-3">
-        <h1 class="row-span-1 p-1 font-darumadrop font-bold text-5xl">My TO DO App</h1>
+        <h1 class="row-span-1 p-1 font-braah-one font-bold text-5xl">My TO DO App</h1>
         <div class="flex justify-start grid grid-cols-2 gap-1 content-center w-80">
           <p class="col-span-1 grid self-end w-40">Brought to you by:</p>
           <h3 class="col-span-1 p-3 w-40 font-bold tracking-wide text-xl text-white text-center bg-[#F81BDC] rounded">IT ACADEMY</h3>
     	</div>
     </div>
-    <nav class="col-span-2 flex justify-end  grid-cols-3 gap-4 p-3">
-            <a class="" href="#index"><i class="col-span-1 p-1.5 text-white bg-[#F81BDC] hover:text-[#F81BDC] hover:bg-white rounded fa fa-house"></i></a>
+    <nav class="col-span-2 flex justify-end items-end grid-cols-3 gap-4 place-items-baseline p-3">
+            <a href="#index"><i class="col-span-1 p-1.5 text-white bg-[#F81BDC] hover:text-[#F81BDC] hover:bg-white rounded fa fa-house"></i></a>
             <form action="flex flex-row grid grid-cols-3 col-span-2">
-              <input type="text" class="basis-2/3 col-span-2 text-grey-300 rounded border-2 border-slate-300 hover:border-slate-400" placeholder="Search..." name="search">
+              <input type="text" class="basis-2/3 col-span-2 text-grey-300 rounded shadow-md" placeholder="Search..." name="search">
               <button type="submit"><i class="basis-1/3 col-span-1 p-1.5 text-white bg-[#F81BDC] hover:text-[#F81BDC] hover:bg-white rounded fa fa-search"></i></button>
             </form>
         </nav>
