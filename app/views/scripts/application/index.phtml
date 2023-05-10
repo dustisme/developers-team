@@ -1,28 +1,20 @@
 <?php include dirname(__DIR__) . '\..\layouts\header.phtml'; ?>
-<div class="container bg-slate-100 p-10 place-content-center rounded">
-    <div class="p-5 bg-slate-300">
-        <form action="addTask" method="POST">
-            <input type="hidden" name="task" value="">
-            <button onclick="'./application/addTask.phtml'"
-                class="p-1.5 w-25 font-bold text-white text-m bg-[#F81BDC] hover:text-[#F81BDC] hover:bg-white rounded-full">Add
-                Task</button>
-        </form>
-    </div>
-    <div class="container bg-slate-200 place-content-center p-5">
-        <table class="min-w-full table-auto divide-y divide-[#D5C2D5] border-2 border-separate bg-[#F4EDF4]">
-            <thead class="font-['Roboto'] divide-y divide-[#D5C2D5]">
+<div class="container p-10 mx-auto my-auto flex justify-center grid grid-rows-2 place-content-center rounded">
+    <div class="container p-10 mx-auto my-auto row-span-1 bg-slate-200 place-content-center p-5">
+        <table class="min-w-full table-auto divide-y divide-[#D5C2D5] border-2 border-separate bg-[#F4EDF4] rounded">
+            <thead class="font-['Roboto'] divide-y divide-[#D5C2D5] rounded">
                 <tr>
-                    <th class="p-1.5 text-white bg-[#F81BDC]">Username</th>
-                    <th class="p-1.5 text-white bg-[#F81BDC]">Task</th>
-                    <th class="p-1.5 text-white bg-[#F81BDC]">Status</th>
-                    <th class="p-1.5 text-white bg-[#F81BDC]">Starting Date</th>
-                    <th class="p-1.5 text-white bg-[#F81BDC]">Finished Date</th>
-                    <th class="p-1.5 text-white bg-[#F81BDC]">Actions</th>
+                    <th class="p-1.5 text-white bg-[#F81BDC] rounded">Username</th>
+                    <th class="p-1.5 text-white bg-[#F81BDC] rounded">Task</th>
+                    <th class="p-1.5 text-white bg-[#F81BDC] rounded">Status</th>
+                    <th class="p-1.5 text-white bg-[#F81BDC] rounded">Starting Date</th>
+                    <th class="p-1.5 text-white bg-[#F81BDC] rounded">Finished Date</th>
+                    <th class="p-1.5 text-white bg-[#F81BDC] rounded">Actions</th>
                 </tr>
             </thead>
-            <tbody class="space-x-2 space-y-2 divide-y divide-x divide-[#D5C2D5] text-center">
+            <tbody class="space-x-2 space-y-2 divide-y divide-[#D5C2D5] text-center rounded">
                 <?php foreach ($this->listTasks as $task): ?>
-                    <tr class="space-x-2 space-y-2 divide-[#D5C2D5]">
+                    <tr class="space-x-2 space-y-2 divide-[#D5C2D5] rounded">
                         <td>
                             <?php echo $task->username; ?>
                         </td>
@@ -42,7 +34,7 @@
                             <div class="flex justify-center items-center grid grid-cols-3 gap-1 p-2">
                                 <a href="viewTask.phtml"
                                     class="col-span-1 border-1 font-bold font-['Roboto'] text-center text-white hover:text-[#F81BDC] bg-[#F81BDC] hover:bg-white opacity-50 hover:opacity-100 rounded-full">View</a>
-                                <a href="ediTask.phtml"
+                                <a href="editTask.phtml"
                                     class="col-span-1 border-1 font-bold font-['Roboto'] text-center text-white hover:text-[#F81BDC] bg-[#F81BDC] hover:bg-white opacity-50 hover:opacity-100 hover:border-white rounded-full">Edit</a>
                                 <a href="deleteTask.phtml"
                                     class="w-[3.5rem] col-span-1 border-1 font-bold font-['Roboto'] text-center text-white hover:text-[#F81BDC] bg-[#F81BDC] hover:bg-white opacity-50 hover:opacity-100 rounded-full">Delete</a>
