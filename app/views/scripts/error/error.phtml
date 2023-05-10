@@ -1,12 +1,12 @@
-<?php include dirname(__DIR__) . '\..\layouts\header.phtml'; ?>
+<?php include dirname(__DIR__) . '\..\layouts\header.phtml' ?>
 <section class="container grid grid-rows-3 gap-2 p-10 mx-auto my-auto rounded">
     <h2 class="row-span-1 font-bold text-2xl">Error</h2>
     <p class="row-span-1">
         <?php echo $this->error; ?>
     </p>
     <br>
-    <button onclick= "'./app/index.phtml'"
+    <a href="application\index.phtml"
         class="row-span-1 p-1.5 w-32 font-bold text-white text-m bg-[#F81BDC] hover:text-[#F81BDC] hover:bg-white rounded-full">Return
-        to homepage</button>
+        to homepage</a>
 </section>
-<?php include dirname(__DIR__) . '\..\layouts\footer.phtml'; ?>
+<?php include dirname(__DIR__) . '\..\layouts\footer.phtml' ?>
