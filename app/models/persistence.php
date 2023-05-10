@@ -17,7 +17,7 @@ class Persistence implements PersistenceInterface {
     function viewTask($task_id): Task {
         return $this->task_array[$this->searchTask($task_id)];
     }
-    function editTask(Task $task): void { 
+    function editTask($task) { 
         $this->task_array[$this->searchTask($task->getId())]->setTask_name($task->getTask_name());
         $this->task_array[$this->searchTask($task->getId())]->setUsername($task->getUsername());
         $this->task_array[$this->searchTask($task->getId())]->setStatus($task->getStatus());
