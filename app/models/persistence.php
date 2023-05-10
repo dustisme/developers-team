@@ -1,5 +1,5 @@
 <?php
-include './app/models/classes/task.php';
+include 'task.php';
 
 class Persistence implements PersistenceInterface {  
     
@@ -7,18 +7,18 @@ class Persistence implements PersistenceInterface {
 
     //creates an array of objects Task
     function __construct() {
-        if(file_exists(dirname(__DIR__).'./web/json/data.json')){
-            $this->task_array = json_decode(file_get_contents(dirname(__DIR__).'./web/json/data.json'), false);
+        if(file_exists(dirname(__DIR__).'\..\web\json\data.json')){
+            $this->task_array = json_decode(file_get_contents(dirname(__DIR__).'\..\web\json\data.json'));
           }
     }
-    function listTasks(): Array {
+    function listTasks() {
         return $this->task_array;
     }
-    function viewTask($task_id): Task {
+    function viewTask($task_id) {
         return $this->task_array[$this->searchTask($task_id)];
     }
-    function editTask(Task $task): void { 
-        $this->task_array[$this->searchTask($task->getId())]->setTask_name($task->getTask_name());
+    function editTask($task) { 
+        $this->task_array[$this->searchTask($task->getId())]->setTasK($task->getTask());
         $this->task_array[$this->searchTask($task->getId())]->setUsername($task->getUsername());
         $this->task_array[$this->searchTask($task->getId())]->setStatus($task->getStatus());
         $this->task_array[$this->searchTask($task->getId())]->setStarting_date($task->getStarting_date());
@@ -27,12 +27,12 @@ class Persistence implements PersistenceInterface {
         $this->addDataToJson($this->task_array);
     }
     //object property Status is a constant var
-    function addTask(): void {
+    function addTask() {
         $task = new Task("", "", '');
         $this->task_array[] = $task;
         $this->addDataToJson($this->task_array);
     }
-    function deleteTask($task_id): Array {
+    function deleteTask($task_id) {
         $deletedTask = $this->task_array[$this->searchTask($task_id)];
         unset($deletedTask);
         $this->addDataToJson($this->task_array);

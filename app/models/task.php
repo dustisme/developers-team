@@ -2,16 +2,16 @@
 include_once 'status.php';
 
     class Task {
-        private int $task_id;
-        private string $task_name;
-        private string $username;
-        private $starting_date;
-        private $finished_date;
+        protected int $task_id;
+        protected string $task;
+        protected string $username;
+        protected $starting_date;
+        protected $finished_date;
         private Status $status;
 
         //Status is a constant var
-        function __construct(string $task_name, string $username, $starting_date, Status $status = Status::executing) {
-            $this->task_name = $task_name;
+        function __construct(string $task, string $username, $starting_date, Status $status = Status::executing) {
+            $this->task = $task;
             $this->username = $username;
             $this->starting_date = $starting_date;
             $this->status = $status;
@@ -20,8 +20,8 @@ include_once 'status.php';
         function getId() {
             return $this->task_id;
         }
-        function getTask_name() {
-            return $this->task_name;
+        function getTask() {
+            return $this->task;
         }
         function getUsername() {
             return $this->username;
@@ -37,8 +37,8 @@ include_once 'status.php';
         }
 
         //setters
-        function setTask_name(string $task_name) {
-            $this->task_name = $task_name;
+        function setTask(string $task) {
+            $this->task = $task;
         }
         function setUsername(string $username) {
             $this->username = $username;
