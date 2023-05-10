@@ -1,44 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TO DO app</title>
-    <!-- Tailwind CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Icons -->
-    <script src="https://kit.fontawesome.com/0ccfeb7cbe.js" crossorigin="anonymous"></script>
-    <!--Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Braah+One&family=Darumadrop+One&family=Roboto&display=swap" rel="stylesheet">
-    <script>
-        module.exports = {
-          theme: {
-            extend: {
-              fontFamily: {
-                'sans': ["Darumadrop One", 'Roboto', '"Braah One"']
-              },
-            },
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My TO DO app</title>
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Icons -->
+  <script src="https://kit.fontawesome.com/0ccfeb7cbe.js" crossorigin="anonymous"></script>
+  <!--Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Braah+One&family=Darumadrop+One&family=Roboto&display=swap"
+    rel="stylesheet">
+  <script>
+    module.exports = {
+      theme: {
+        extend: {
+          fontFamily: {
+            'sans': ["Darumadrop One", 'Roboto', '"Braah One"']
           },
-        };
-    </script>
+        },
+      },
+    };
+  </script>
 </head>
-<header class="container grid grid-cols-4 gap-3 grid-rows-2 p-10 mx-auto my-auto bg-[url(./images/pexels1.jpg)] rounded sticky top-0">
-	<div class="flex justify-center col-span-4 row-span-1 p-5">
-        <h1 class="p-1 font-['Darumadrop_One'] font-bold text-5xl">My TO DO App</h1>
-    </div>
-    <div class="col-span-2 flex justify-end items-end grid grid-cols-2 gap-4 p-3">
-          <p class="flex justify-end items-end content-end">Brought to you by: <span class="p-3 w-40 font-bold tracking-wide text-xl text-white text-center inline-block align-middle uppercase bg-[#F81BDC]">it academy</span></p>     
-    </div>
-    <nav class="col-span-2 flex justify-end items-end grid-cols-3 gap-4 place-items-baseline p-3">
-            <a href="#index"><i class="col-span-1 p-1.5 text-white bg-[#F81BDC] hover:text-[#F81BDC] hover:bg-white rounded-full fa fa-house"></i></a>
-            <form action="flex flex-row grid grid-cols-3 col-span-2">
-              <input type="text" class="basis-2/3 col-span-2 text-grey-300 rounded shadow-md border-2 border-slate-100 hover:border-slate-200 " placeholder="Search..." name="search">
-              <button type="submit"><i class="basis-1/3 col-span-1 p-1.5 text-white bg-[#F81BDC] hover:text-[#F81BDC] hover:bg-white rounded-full fa fa-search"></i></button>
-            </form>
-        </nav>
-    </header>
-<body class="bg-[#FEFEFF] rounded">
-    <div class="lg:content-auto">
+<header
+  class="container grid grid-cols-4 gap-3 p-10 mx-auto my-auto bg-slate-200 bg-[url(./images/pexels1.jpg)] rounded sticky top-0">
+  <div class="col-span-2 flex justify-end items-end grid grid-cols-2 gap-4 p-3 bg-slate-400">
+    <p class="flex justify-end items-end content-end">Brought to you by: <span
+        class="p-3 w-40 font-bold tracking-wide text-xl text-white text-center inline-block align-middle uppercase bg-[#F81BDC]">it
+        academy</span></p>
+  </div>
+  <nav class="col-span-2 flex justify-end items-end grid-cols-3 gap-4 place-items-baseline p-3">
+    <a href="#index"><i
+        class="col-span-1 p-1.5 text-white bg-[#F81BDC] hover:text-[#F81BDC] hover:bg-white rounded-full fa fa-house"></i></a>
+    <form action="flex flex-row grid grid-cols-3 col-span-2">
+      <input type="text"
+        class="basis-2/3 col-span-2 text-grey-300 rounded shadow-md border-2 border-slate-100 hover:border-slate-200"
+        placeholder="Search..." name="search">
+      <button type="submit"><i
+          class="basis-1/3 col-span-1 p-1.5 text-white bg-[#F81BDC] hover:text-[#F81BDC] hover:bg-white rounded-full fa fa-search rounded-full"></i></button>
+    </form>
+  </nav>
+  <div class="flex justify-center place-content-center col-span-4 p-5 bg-slate-300">
+    <h1 class="p-1 font-['Darumadrop_One'] font-bold text-5xl">My TO DO App</h1>
+  </div>
+
+</header>
+
+<body class="bg-[#FEFEFF]">
