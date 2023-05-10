@@ -9,7 +9,7 @@
         </form>
     </div>
     <div class="container bg-slate-200 place-content-center p-5">
-        <table class="min-w-full divide-y divide-[#D5C2D5] border-2 border-separate bg-[#F1C5F0]">
+        <table class="min-w-full table-auto divide-y divide-[#D5C2D5] border-2 border-separate bg-[#F4EDF4]">
             <thead class="font-['Roboto'] divide-y divide-[#D5C2D5]">
                 <tr>
                     <th class="p-1.5 text-white bg-[#F81BDC]">Username</th>
@@ -20,9 +20,9 @@
                     <th class="p-1.5 text-white bg-[#F81BDC]">Actions</th>
                 </tr>
             </thead>
-            <tbody class="space-x-2 space-y-2 divide-y divide-[#D5C2D5] text-center">
+            <tbody class="space-x-2 space-y-2 divide-y divide-x divide-[#D5C2D5] text-center">
                 <?php foreach ($this->listTasks as $task): ?>
-                    <tr class="divide-y divide-[#D5C2D5]">
+                    <tr class="space-x-2 space-y-2 divide-[#D5C2D5]">
                         <td>
                             <?php echo $task->username; ?>
                         </td>
@@ -39,28 +39,13 @@
                             <?php echo $task->finishedDate; ?>
                         </td>
                         <td>
-                            <div class="flex justify-center">
-                                <div class="p-1.5 flex">
-                                    <form action="viewTask" method="POST">
-                                        <input type="hidden" name="task" value="<?php echo $task->getId(); ?>">
-                                        <button
-                                            class="w-[3rem] border-1 font-bold text-center text-white hover:text-[#F81BDC] bg-[#F81BDC] hover:bg-white hover:border-white rounded-full">View</button>
-                                    </form>
-                                </div>
-                                <div class="p-1.5 flex">
-                                    <form action="editTask" method="POST">
-                                        <input type="hidden" name="task" value="<?php echo $task->getId(); ?>">
-                                        <button
-                                            class="w-[3rem] border-1 font-bold text-center text-white hover:text-[#F81BDC] bg-[#F81BDC] hover:bg-white hover:border-white rounded-full">Edit</button>
-                                    </form>
-                                </div>
-                                <div class="p-1.5 flex">
-                                    <form action="deleteTask" method="POST">
-                                        <input type="hidden" name="task" value="<?php echo $task->getId(); ?>">
-                                        <button
-                                            class="w-[4.5rem] border-1 font-bold text-center text-white hover:text-[#F81BDC] bg-[#F81BDC] hover:bg-white rounded-full">Delete</button>
-                                    </form>
-                                </div>
+                            <div class="flex justify-center items-center grid grid-cols-3 gap-1 p-2">
+                                <a href="viewTask.phtml"
+                                    class="col-span-1 border-1 font-bold font-['Roboto'] text-center text-white hover:text-[#F81BDC] bg-[#F81BDC] hover:bg-white opacity-50 hover:opacity-100 rounded-full">View</a>
+                                <a href="ediTask.phtml"
+                                    class="col-span-1 border-1 font-bold font-['Roboto'] text-center text-white hover:text-[#F81BDC] bg-[#F81BDC] hover:bg-white opacity-50 hover:opacity-100 hover:border-white rounded-full">Edit</a>
+                                <a href="deleteTask.phtml"
+                                    class="w-[3.5rem] col-span-1 border-1 font-bold font-['Roboto'] text-center text-white hover:text-[#F81BDC] bg-[#F81BDC] hover:bg-white opacity-50 hover:opacity-100 rounded-full">Delete</a>
                             </div>
                         </td>
                     </tr>
