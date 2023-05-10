@@ -12,7 +12,7 @@
             </tr>
         </thead>
         <tbody class="divide-y divide-[#D5C2D5]">
-            <?php foreach ($this->listTasks as $task); ?>
+            <?php foreach ($this->listTasks as $task): ?>
             <tr>
                 <td>
                     <?php echo $task->getUsername() ?>
@@ -52,5 +52,7 @@
                     </div>
                 </td>
             </tr>
+            <?php endforeach;?>
+        </tbody>
 </section>
 <?php include dirname(__DIR__) . '\..\layouts\footer.php' ?>
