@@ -1,27 +1,31 @@
 <?php include dirname(__DIR__). '../layouts/header.phtml'?>
-<table>
-    <thead>
-        <tr>
-            <th>Username</th>
-            <th>Task</th>
-            <th>Status</th>
-            <th>Starting Date</th>
-            <th>Finished Date</th>
-            <th>Actions</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td><?php ?></td>
-            <td><?php ?></td>
-            <td><?php ?></td>
-            <td><?php ?></td>
-            <td><?php ?></td>
-            <td><?php ?></td>
-        </tr>
-    </tbody>
-    <!-- <tfoot>
+<section class="container flex justify-center align-center rounded">
+<table class="divide-y divide-[#D5C2D5] border-2 border-collapse bg-[#F1C5F0] rounded">
+  <thead class="divide-y divide-[#D5C2D5] rounded">
+          <tr>
+              <th class="p-1.5 text-white bg-[#F81BDC]">Username</th>
+              <th class="p-1.5 text-white bg-[#F81BDC]">Task</th>
+              <th class="p-1.5 text-white bg-[#F81BDC]">Status</th>
+              <th class="p-1.5 text-white bg-[#F81BDC]">Starting Date</th>
+              <th class="p-1.5 text-white bg-[#F81BDC]">Finished Date</th>
+              <th class="p-1.5 text-white bg-[#F81BDC]">Actions</th>
+          </tr>
+      </thead>
+      <tbody class="divide-y divide-[#D5C2D5]">
+        <?php foreach($this->listTasks as $task); ?>
+          <tr>
+              <td class="opacity-50 hover:oapcity-100"><?php echo $task->()?></td>
+              <td class="opacity-50 hover:oapcity-100"><?php echo $task->()?></td>
+              <td class="opacity-50 hover:oapcity-100"><?php echo $task->()?></td>
+              <td class="opacity-50 hover:oapcity-100"><?php echo $task->()?></td>
+              <td class="opacity-50 hover:oapcity-100"><?php echo $task->()?></td>
+              <td class="opacity-50 hover:oapcity-100"><?php echo $task->()?></td>
+          </tr>
+          <?php ?>
+      </tbody>
+      <!-- <tfoot>
 
-    </tfoot> -->
-</table>
+      </tfoot> -->
+  </table>
+</section>
 <?php include dirname(__DIR__). './layouts/footer.phtml'?>
