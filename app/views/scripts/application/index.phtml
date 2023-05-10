@@ -1,8 +1,15 @@
 <?php include dirname(__DIR__) . '\..\layouts\header.phtml'; ?>
-
-<div class="container p-2.5">
-    <div class="flex justify-center place-content-center">
-        <table class="divide-y divide-[#D5C2D5] border-2 border-collapse bg-[#F1C5F0]">
+<div class="container bg-slate-100 p-10 place-content-center rounded">
+    <div class="p-5 bg-slate-300">
+        <form action="addTask" method="POST">
+            <input type="hidden" name="task" value="">
+            <button onclick="'./application/addTask.phtml'"
+                class="p-1.5 w-25 font-bold text-white text-m bg-[#F81BDC] hover:text-[#F81BDC] hover:bg-white rounded-full">Add
+                Task</button>
+        </form>
+    </div>
+    <div class="container bg-slate-200 place-content-center p-5">
+        <table class="min-w-full divide-y divide-[#D5C2D5] border-2 border-separate bg-[#F1C5F0]">
             <thead class="font-['Roboto'] divide-y divide-[#D5C2D5]">
                 <tr>
                     <th class="p-1.5 text-white bg-[#F81BDC]">Username</th>
@@ -13,23 +20,23 @@
                     <th class="p-1.5 text-white bg-[#F81BDC]">Actions</th>
                 </tr>
             </thead>
-            <tbody class="divide-y divide-[#D5C2D5]">
+            <tbody class="space-x-2 space-y-2 divide-y divide-[#D5C2D5] text-center">
                 <?php foreach ($this->listTasks as $task): ?>
-                    <tr>
+                    <tr class="divide-y divide-[#D5C2D5]">
                         <td>
-                            <?php echo $task->getUsername(); ?>
+                            <?php echo $task->username; ?>
                         </td>
                         <td>
-                            <?php echo $task->getTask_name(); ?>
+                            <?php echo $task->task; ?>
                         </td>
                         <td>
-                            <?php echo $task->getStatus(); ?>
+                            <?php echo $task->status; ?>
                         </td>
                         <td>
-                            <?php echo $task->getStarting_date(); ?>
+                            <?php echo $task->startingDate; ?>
                         </td>
                         <td>
-                            <?php echo $task->getFinished_date(); ?>
+                            <?php echo $task->finishedDate; ?>
                         </td>
                         <td>
                             <div class="flex justify-center">
@@ -62,5 +69,6 @@
         </table>
     </div>
 </div>
+
 
 <?php include dirname(__DIR__) . '\..\layouts\footer.phtml'; ?>
