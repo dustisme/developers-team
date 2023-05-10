@@ -15,18 +15,20 @@ class ApplicationController extends Controller
 	}
 
     public function viewTaskAction() {
-        $this->view->oneTask = $this->persistence->viewTask($_POST[]);
+        $this->view->viewTask = $this->persistence->viewTask($_POST['task']);
     }
 
-    public function editOneTaskAction() {
+    public function editTaskAction() {
         
     }
 
     public function addTaskAction() {
-
+        $this->persistence->addTask();
+        header ("Location: " . WEB_ROOT . "/");
     }
     public function deleteTaskAction() {
-        $this->view->deteleTask = $this->persistence->deleteTask($_POST[]);
+        $this->view->deteleTask = $this->persistence->deleteTask($_POST['task']);
+        header ("Location: " . WEB_ROOT . "/");
     }
     public function searchTaskAction() {
 
