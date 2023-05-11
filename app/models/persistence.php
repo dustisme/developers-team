@@ -41,7 +41,7 @@ class Persistence implements PersistenceInterface {
     //search by object property (task id)
     function searchTask($task_id) {
         foreach($this->task_array as $task) {
-            if($task->getId() == $task_id) {
+            if($task->id == $task_id) {
                 return $task;
             }
         }
