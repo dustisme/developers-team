@@ -40,13 +40,12 @@ class Persistence implements PersistenceInterface {
     }
     //search by object property (task id)
     function searchTask($task_id) {
-        foreach($this->task_array as $selected_task) {
-            if($selected_task->getId() == $task_id) {
-                return $selected_task;
-            } else {
-                return dirname(__DIR__).'./app/views/scripts/error/error.phtml';
+        foreach($this->task_array as $task) {
+            if($task->getId() == $task_id) {
+                return $task;
             }
         }
+        return false;
     }
     function addDataToJson ($task_array) {
         file_put_contents(dirname(__DIR__).'./web/json/data.json', json_encode($task_array, JSON_PRETTY_PRINT));
