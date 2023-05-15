@@ -19,7 +19,7 @@ class ApplicationController extends Controller
     }
 
     public function editTaskAction() {
-        
+        $this->view->editTask = $this->persistence->editTask($this->_namedParameters["id"]);
     }
 
     public function addTaskAction() {
