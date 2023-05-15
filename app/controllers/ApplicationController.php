@@ -15,7 +15,7 @@ class ApplicationController extends Controller
 	}
 
     public function viewTaskAction() {
-        $this->view->viewTask = $this->persistence->viewTask($_POST['task']);
+        $this->view->viewTask = $this->persistence->viewTask($this->_namedParameters["id"]);
     }
 
     public function editTaskAction() {
