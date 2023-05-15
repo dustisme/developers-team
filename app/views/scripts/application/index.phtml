@@ -40,13 +40,17 @@
                         </td>
                         <td>
                             <div class="flex justify-center items-center grid grid-cols-3 gap-1 p-2">
-                            <div class="col-span-1">
-                                    <a href="viewTask/<?php echo $selected_task->id ?>" class="w-[3rem] col-span-1 border-1 font-bold font-['Roboto'] text-center text-white hover:text-[#F81BDC] bg-[#F81BDC] hover:bg-white opacity-50 hover:opacity-100 rounded-full">View</a>
+                                <div class="col-span-1">
+                                    <a href="viewTask/<?php echo $selected_task->id ?>"
+                                        class="w-[3rem] col-span-1 border-1 font-bold font-['Roboto'] text-center text-white hover:text-[#F81BDC] bg-[#F81BDC] hover:bg-white opacity-50 hover:opacity-100 rounded-full">View</a>
                                 </div>
-                                <a href="ediTask.phtml"
-                                    class="col-span-1 border-1 font-bold font-['Roboto'] text-center text-white hover:text-[#F81BDC] bg-[#F81BDC] hover:bg-white opacity-50 hover:opacity-100 hover:border-white rounded-full">Edit</a>
-                                <a href="deleteTask.phtml"
-                                    class="w-[3.5rem] col-span-1 border-1 font-bold font-['Roboto'] text-center text-white hover:text-[#F81BDC] bg-[#F81BDC] hover:bg-white opacity-50 hover:opacity-100 rounded-full">Delete</a>
+                                <div>
+                                    <a href="ediTask/<?php echo $selected_task->id ?>"
+                                        class="col-span-1 border-1 font-bold font-['Roboto'] text-center text-white hover:text-[#F81BDC] bg-[#F81BDC] hover:bg-white opacity-50 hover:opacity-100 hover:border-white rounded-full">Edit</a>
+                                </div>
+                                <div><a href="deleteTask/<?php echo $selected_task->id ?>"
+                                        class="w-[3.5rem] col-span-1 border-1 font-bold font-['Roboto'] text-center text-white hover:text-[#F81BDC] bg-[#F81BDC] hover:bg-white opacity-50 hover:opacity-100 rounded-full">Delete</a>
+                                </div>
                             </div>
                         </td>
                     </tr>
