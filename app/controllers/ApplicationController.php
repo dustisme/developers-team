@@ -15,7 +15,7 @@ class ApplicationController extends Controller
 	}
 
     public function viewTaskAction() {
-        $this->view->viewTask = $this->persistence->viewTask($_POST['task']);
+        $this->view->task = $this->persistence->viewTask($this->_namedParameters["id"]);
     }
 
     public function editTaskAction() {
@@ -27,7 +27,7 @@ class ApplicationController extends Controller
         header ("Location: " . WEB_ROOT . "/");
     }
     public function deleteTaskAction() {
-        $this->view->deteleTask = $this->persistence->deleteTask($_POST['task']);
+        $this->view->task = $this->persistence->deleteTask($_POST['task']);
         header ("Location: " . WEB_ROOT . "/");
     }
     public function searchTaskAction() {
@@ -39,3 +39,4 @@ class ApplicationController extends Controller
 		echo "hello from test::check";
 	}
 }
+?>
