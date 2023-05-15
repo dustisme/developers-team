@@ -19,14 +19,15 @@ class Persistence implements PersistenceInterface {
     function viewTask($task_id) {
         return $this->searchTask($task_id);
     }
-    function editTask($task_id, $edited_task) { 
-        $this->searchTask($task_id)->username = $edited_task->username;
+    function editTask($task_id) { 
+        $this->searchTask($task_id)->username = $_POST['username'];
         $this->searchTask($task_id)->task = $edited_task->task_description;
         $this->searchTask($task_id)->startingDate = $edited_task->starting_date;
         $this->searchTask($task_id)->finishedDate = $edited_task->finished_date;
         $this->searchTask($task_id)->status = $edited_task->status;
         
         $this->addDataToJson($this->task_array);
+        return $this->task_array;
     }
     //object property Status is a constant var
     function addTask() {
@@ -37,7 +38,7 @@ class Persistence implements PersistenceInterface {
         $this->addDataToJson($this->task_array);
     }
     function deleteTask($task_id) {
-        $deletedTask = $this->task_array[$this->searchTask($task_id)];
+        $deletedTask = $this->searchTask($task_id);
         unset($deletedTask);
         $this->addDataToJson($this->task_array);
         return $this->task_array;
