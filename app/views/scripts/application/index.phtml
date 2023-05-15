@@ -21,27 +21,33 @@
                 </tr>
             </thead>
             <tbody class="space-x-2 space-y-2 divide-y divide-x divide-[#D5C2D5] text-center">
-                <?php foreach ($this->listTasks as $task): ?>
+                <?php foreach ($this->listTasks as $selected_task): ?>
                     <tr class="space-x-2 space-y-2 divide-[#D5C2D5]">
                         <td>
-                            <?php echo $task->username; ?>
+                            <?php echo $selected_task->username; ?>
                         </td>
                         <td>
-                            <?php echo $task->task; ?>
+                            <?php echo $selected_task->task; ?>
                         </td>
                         <td>
-                            <?php echo $task->status; ?>
+                            <?php echo $selected_task->status; ?>
                         </td>
                         <td>
-                            <?php echo $task->startingDate; ?>
+                            <?php echo $selected_task->startingDate; ?>
                         </td>
                         <td>
-                            <?php echo $task->finishedDate; ?>
+                            <?php echo $selected_task->finishedDate; ?>
                         </td>
                         <td>
                             <div class="flex justify-center items-center grid grid-cols-3 gap-1 p-2">
-                                <a href="viewTask.phtml"
-                                    class="col-span-1 border-1 font-bold font-['Roboto'] text-center text-white hover:text-[#F81BDC] bg-[#F81BDC] hover:bg-white opacity-50 hover:opacity-100 rounded-full">View</a>
+                            <div class="col-span-1">
+                                    <a href="viewTask/<?php echo $selected_task->id ?>" class="w-[3rem] col-span-1 border-1 font-bold font-['Roboto'] text-center text-white hover:text-[#F81BDC] bg-[#F81BDC] hover:bg-white opacity-50 hover:opacity-100 rounded-full">View</a>
+                                    <!-- <form action="viewTask" method="POST">
+                                        <input type="hidden" name="task" value="<?php ?>">
+                                        <button
+                                            class="w-[3rem] col-span-1 border-1 font-bold font-['Roboto'] text-center text-white hover:text-[#F81BDC] bg-[#F81BDC] hover:bg-white opacity-50 hover:opacity-100 rounded-full">View</button>
+                                    </form> -->
+                                </div>
                                 <a href="ediTask.phtml"
                                     class="col-span-1 border-1 font-bold font-['Roboto'] text-center text-white hover:text-[#F81BDC] bg-[#F81BDC] hover:bg-white opacity-50 hover:opacity-100 hover:border-white rounded-full">Edit</a>
                                 <a href="deleteTask.phtml"
