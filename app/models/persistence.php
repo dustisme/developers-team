@@ -21,10 +21,10 @@ class Persistence implements PersistenceInterface {
     }
     function editTask($task_id) { 
         $this->searchTask($task_id)->username = $_POST['username'];
-        $this->searchTask($task_id)->task = $edited_task->task_description;
-        $this->searchTask($task_id)->startingDate = $edited_task->starting_date;
-        $this->searchTask($task_id)->finishedDate = $edited_task->finished_date;
-        $this->searchTask($task_id)->status = $edited_task->status;
+        $this->searchTask($task_id)->task = $_POST['task'];
+        $this->searchTask($task_id)->startingDate = $_POST['startingDate'];
+        $this->searchTask($task_id)->finishedDate = $_POST['finishedDate'];
+        $this->searchTask($task_id)->status = $_POST['status'];
         
         $this->addDataToJson($this->task_array);
         return $this->task_array;
