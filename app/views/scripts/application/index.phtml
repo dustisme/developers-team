@@ -31,13 +31,29 @@
                             <?php echo $task->finishedDate; ?>
                         </td>
                         <td>
-                            <div class="flex justify-center items-center grid grid-cols-3 gap-1 p-2">
-                                <a href="viewTask.phtml"
-                                    class="col-span-1 border-1 font-bold font-['Roboto'] text-center text-white hover:text-[#F81BDC] bg-[#F81BDC] hover:bg-white opacity-50 hover:opacity-100 rounded-full">View</a>
-                                <a href="editTask.phtml"
-                                    class="col-span-1 border-1 font-bold font-['Roboto'] text-center text-white hover:text-[#F81BDC] bg-[#F81BDC] hover:bg-white opacity-50 hover:opacity-100 hover:border-white rounded-full">Edit</a>
-                                <a href="deleteTask.phtml"
-                                    class="w-[3.5rem] col-span-1 border-1 font-bold font-['Roboto'] text-center text-white hover:text-[#F81BDC] bg-[#F81BDC] hover:bg-white opacity-50 hover:opacity-100 rounded-full">Delete</a>
+                            <div class="container flex justify-center items-baseline grid grid-cols-3 gap-1 p-2">
+                                <div class="col-span-1">
+                                    <a href="viewTask/<?php echo $task->id ?>" class="w-[3rem] col-span-1 border-1 font-bold font-['Roboto'] text-center text-white hover:text-[#F81BDC] bg-[#F81BDC] hover:bg-white opacity-50 hover:opacity-100 rounded-full">View</a>
+                                    <!-- <form action="viewTask" method="POST">
+                                        <input type="hidden" name="task" value="<?php echo $task->id ?>">
+                                        <button
+                                            class="w-[3rem] col-span-1 border-1 font-bold font-['Roboto'] text-center text-white hover:text-[#F81BDC] bg-[#F81BDC] hover:bg-white opacity-50 hover:opacity-100 rounded-full">View</button>
+                                    </form> -->
+                                </div>
+                                <div class="col-span-1">
+                                    <form action="editTask" method="POST">
+                                        <input type="hidden" name="task" value="<?php echo $task->id?>">
+                                        <button
+                                            class="w-[3rem] col-span-1 border-1 font-bold font-['Roboto'] text-center text-white hover:text-[#F81BDC] bg-[#F81BDC] hover:bg-white opacity-50 hover:opacity-100 hover:border-white rounded-full">Edit</button>
+                                    </form>
+                                </div>
+                                <div class="col-span-1">
+                                    <form action="deleteTask" method="POST">
+                                        <input type="hidden" name="task" value="<?php echo $task->id?>">
+                                        <button
+                                            class="w-[3.5rem] col-span-1 border-1 font-bold font-['Roboto'] text-center text-white hover:text-[#F81BDC] bg-[#F81BDC] hover:bg-white opacity-50 hover:opacity-100 rounded-full">Delete</button>
+                                    </form>
+                                </div>
                             </div>
                         </td>
                     </tr>
