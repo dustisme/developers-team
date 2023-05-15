@@ -4,18 +4,20 @@ include 'task.php';
 class Persistence implements PersistenceInterface {  
     
     private Array $task_array = array();
+    private int $track_id;
 
     //creates an array of objects Task
     function __construct() {
         if(file_exists(dirname(__DIR__).'\..\web\json\data.json')){
             $this->task_array = json_decode(file_get_contents(dirname(__DIR__).'\..\web\json\data.json'));
           }
+        $this->track_id = end($this->task_array)->id;
     }
     function listTasks() {
         return $this->task_array;
     }
     function viewTask($task_id) {
-        return $this->task_array[$this->searchTask($task_id)];
+        return $this->searchTask($task_id);
     }
     function editTask($task) { 
         $this->task_array[$this->searchTask($task->getId())]->setTasK($task->getTask());
