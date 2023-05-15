@@ -31,7 +31,9 @@ class Persistence implements PersistenceInterface {
     //object property Status is a constant var
     function addTask() {
         $task = new Task("", "", '');
-        $this->task_array[] = $task;
+        $this->track_id += 1;
+        $task->id = $this->track_id;
+        array_push($this->task_array[], $task);
         $this->addDataToJson($this->task_array);
     }
     function deleteTask($task_id) {
