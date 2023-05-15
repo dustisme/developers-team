@@ -22,7 +22,7 @@ class Persistence implements PersistenceInterface {
     function editTask($task_id, $edited_task) { 
         $this->searchTask($task_id)->username = $edited_task->username;
         $this->searchTask($task_id)->task = $edited_task->task_description;
-        $this->searchTask($task_id)->startedDate = $edited_task->starting_date;
+        $this->searchTask($task_id)->startingDate = $edited_task->starting_date;
         $this->searchTask($task_id)->finishedDate = $edited_task->finished_date;
         $this->searchTask($task_id)->status = $edited_task->status;
         
