@@ -1,35 +1,36 @@
 <?php include dirname(__DIR__) . '\..\layouts\header.phtml'; ?>
+
 <div class="container bg-slate-200 place-content-center p-5">
     <table class="min-w-full table-auto divide-y divide-[#D5C2D5] border-2 border-separate bg-[#F4EDF4]">
         <tbody>
             <tr>
                 <th class="p-1.5 text-white bg-[#F81BDC]">Username:</th>
                 <td>
-                    <?php echo $task->username; ?>
+                    <?php echo $this->viewTask->username; ?>
                 </td>
             </tr>
             <tr>
                 <th class="p-1.5 text-white bg-[#F81BDC]">Task: </th>
                 <td>
-                    <?php echo $this->task->task; ?>
+                    <?php echo $this->viewTask->task; ?>
                 </td>
             </tr>
             <tr>
                 <th class="p-1.5 text-white bg-[#F81BDC]">Status: </th>
                 <td>
-                    <?php echo $this->task->status; ?>
+                    <?php echo $this->viewTask->status; ?>
                 </td>
             </tr>
             <tr>
                 <th class="p-1.5 text-white bg-[#F81BDC]">Started Date</th>
                 <td>
-                    <?php echo $this->task->startedDate; ?>
+                    <?php echo $this->viewTask->startingDate; ?>
                 </td>
             </tr>
             <tr>
                 <th class="p-1.5 text-white bg-[#F81BDC]">Finished Date</th>
                 <td>
-                    <?php echo $this->task->finishedDate; ?>
+                    <?php echo $this->viewTask->finishedDate; ?>
                 </td>
             </tr>
         </tbody>
