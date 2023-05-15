@@ -32,7 +32,7 @@ class Persistence implements PersistenceInterface {
     function addTask() {
         $task = new Task("", "", '');
         $this->track_id += 1;
-        $task->id = $this->track_id;
+        $task->task_id = $this->track_id;
         array_push($this->task_array[], $task);
         $this->addDataToJson($this->task_array);
     }
