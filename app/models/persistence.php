@@ -19,12 +19,12 @@ class Persistence implements PersistenceInterface {
     function viewTask($task_id) {
         return $this->searchTask($task_id);
     }
-    function editTask($task) { 
-        $this->task_array[$this->searchTask($task->getId())]->setTasK($task->getTask());
-        $this->task_array[$this->searchTask($task->getId())]->setUsername($task->getUsername());
-        $this->task_array[$this->searchTask($task->getId())]->setStatus($task->getStatus());
-        $this->task_array[$this->searchTask($task->getId())]->setStarting_date($task->getStarting_date());
-        $this->task_array[$this->searchTask($task->getId())]->setFinished_date($task->getFinished_date());
+    function editTask($task_id, $edited_task) { 
+        $this->searchTask($task_id)->username = $edited_task->username;
+        $this->searchTask($task_id)->task = $edited_task->task_description;
+        $this->searchTask($task_id)->startedDate = $edited_task->starting_date;
+        $this->searchTask($task_id)->finishedDate = $edited_task->finished_date;
+        $this->searchTask($task_id)->status = $edited_task->status;
         
         $this->addDataToJson($this->task_array);
     }
@@ -45,12 +45,11 @@ class Persistence implements PersistenceInterface {
     //search by object property (task id)
     function searchTask($task_id) {
         foreach($this->task_array as $selected_task) {
-            if($selected_task->getId() == $task_id) {
+            if($selected_task->id == $task_id) {
                 return $selected_task;
-            } else {
-                return dirname(__DIR__).'./app/views/scripts/error/error.phtml';
             }
         }
+        return false;
     }
     function addDataToJson ($task_array) {
         file_put_contents(dirname(__DIR__).'./web/json/data.json', json_encode($task_array, JSON_PRETTY_PRINT));
